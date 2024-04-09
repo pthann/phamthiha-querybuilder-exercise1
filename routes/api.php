@@ -4,6 +4,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StudentController;
+use App\Models\Student;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,6 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::get('people/{id}', [PersonController::class, 'getInfo']);
 Route::get('posts/{id}', [PostController::class, 'getPost']);
-// Route::resources([
-//     'people' => PersonController::class,
-// ]);
+
+Route::resources([
+    'students' => StudentController::class,
+]);
